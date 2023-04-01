@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CelilCavus.MvcCoreAPICrud-1-10.props" />
+</Project>

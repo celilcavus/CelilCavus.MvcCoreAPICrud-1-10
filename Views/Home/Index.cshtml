@@ -1,0 +1,38 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using PagedList;
+@model ICollection<Ogrenci>
+
+<a href="/Home/Add" class="btn btn-primary mb-3 mt-2"> Add Student</a>
+
+<table class="table table-bordered text-center">
+    <thead>
+        <tr>
+            <td>Ad</td>
+            <td>Soyad</td>
+            <td>Cinsiyet</td>
+            <td>Bolum</td>
+            <td>Sinif</td>
+            <td>Update</td>
+            <td>Delete</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ad</td>
+                <td>@item.soyad</td>
+                <td>@item.cinsiyet</td>
+                <td>@item.bolum</td>
+                <td>@item.sinif</td>
+                <td><a href="Home/Update/@item.id" class="btn btn-warning">Update</a></td>
+                <td><a href="Home/Delete/@item.id" class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

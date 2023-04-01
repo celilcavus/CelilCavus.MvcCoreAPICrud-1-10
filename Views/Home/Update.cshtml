@@ -1,0 +1,35 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Ogrenci
+
+@using (Html.BeginForm("Update", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.id)
+
+     @Html.ValidationMessageFor(x=>x.ad,"",new{@class="text-danger"})
+    @Html.ValidationMessageFor(x=>x.soyad,"",new{@class="text-danger mt-1"})
+    @Html.ValidationMessageFor(x=>x.cinsiyet,"",new{@class="text-danger mt-1"})
+    @Html.ValidationMessageFor(x=>x.bolum,"",new{@class="text-danger mt-1"})
+    @Html.ValidationMessageFor(x=>x.sinif,"",new{@class="text-danger mt-1"})
+
+
+
+    @Html.Label("Öğrenci Adi : ")
+    @Html.TextBoxFor(x=>x.ad,new{@class="form-control"})
+
+    @Html.Label("Öğrenci Soyadi : ")
+    @Html.TextBoxFor(x=>x.soyad,new{@class="form-control"})
+
+    @Html.Label("Öğrenci Cinsiyet : ")
+    @Html.TextBoxFor(x=>x.cinsiyet,new{@class="form-control"})
+
+    @Html.Label("Öğrenci Bölüm : ")
+    @Html.TextBoxFor(x=>x.bolum,new{@class="form-control"})
+
+    @Html.Label("Öğrenci Sinif : ")
+    @Html.TextBoxFor(x=>x.sinif,new{@class="form-control"})
+
+    <button class="btn btn-dark mt-2" type="submit">Updated</button>
+}

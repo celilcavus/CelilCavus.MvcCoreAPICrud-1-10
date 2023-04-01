@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ICollection<Dersler>
+<a class="btn btn-primary  mb-3 mt-2" href="/Ders/Add">Add</a>
+<br />
+<table class="table table-bordered text-center">
+    <thead>
+        <tr>
+            <th>Ders Kodu</th>
+            <th>Ders Adi</th>
+            <th>Ders Hocasi</th>
+            <th>Ders Dönemi</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ders_kodu</td>
+                <td>@item.ders_adi</td>
+                <td>@item.ders_hocasi</td>
+                <td>@item.ders_donemi</td>
+                <td><a href="Ders/Update/@item.id" class="btn btn-warning">Update</a></td>
+                <td><a href="Ders/Delete/@item.id" class="btn btn-danger">Delete</a></td>
+            </tr>
+
+        }
+    </tbody>
+</table>

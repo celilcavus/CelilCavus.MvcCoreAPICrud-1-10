@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Dersler
+
+@using (Html.BeginForm("Update", "Ders", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.id,new{@class="mt-1"})
+
+
+    @Html.ValidationMessageFor(x=>x.ders_kodu,"",new{@class="text-danger"})
+    @Html.ValidationMessageFor(x=>x.ders_adi,"",new{@class="text-danger mt-1"})
+    @Html.ValidationMessageFor(x=>x.ders_hocasi,"",new{@class="text-danger mt-1"})
+
+
+    @Html.Label("Ders Kodu : ")
+    @Html.TextBoxFor(x=>x.ders_kodu,new {@class="form-control mt-1"})
+
+    @Html.Label("Ders Adi : ")
+    @Html.TextBoxFor(x=>x.ders_adi,new {@class="form-control mt-1"})
+
+    @Html.Label("Ders Hocasi : ")
+    @Html.TextBoxFor(x=>x.ders_hocasi,new {@class="form-control mt-1"})
+
+    @Html.Label("Ders Dönemi : ")
+    @Html.TextBoxFor(x=>x.ders_donemi,new {@class="form-control mt-1"})
+
+    <button class="btn btn-dark mt-2" type="submit">Update</button>
+
+}
